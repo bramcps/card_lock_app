@@ -52,22 +52,22 @@ function useProvideAuth() {
       async (error) => {
         const originalRequest = error.config;
 
-        if (error.response?.status === 401 && !originalRequest._retry) {
-          originalRequest._retry = true;
+        // if (error.response?.status === 401 && !originalRequest._retry) {
+        //   originalRequest._retry = true;
 
-          try {
-            const response = await refreshToken();
-            if (response?.token) {
-              localStorage.setItem('token', response.token);
-              api.defaults.headers.common['Authorization'] = `Bearer ${response.token}`;
+        //   try {
+        //     const response = await refreshToken();
+        //     if (response?.token) {
+        //       localStorage.setItem('token', response.token);
+        //       api.defaults.headers.common['Authorization'] = `Bearer ${response.token}`;
 
-              return api(originalRequest);
-            }
-          } catch (refreshError) {
-            signOut();
-            return Promise.reject(refreshError);
-          }
-        }
+        //       return api(originalRequest);
+        //     }
+        //   } catch (refreshError) {
+        //     signOut();
+        //     return Promise.reject(refreshError);
+        //   }
+        // }
 
         return Promise.reject(error);
       }

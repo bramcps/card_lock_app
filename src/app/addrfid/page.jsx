@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { api, useAuth } from '@/hooks/useAuth';
 import Link from "next/link";
 
-
 export default function AddRFIDCardPage() {
   const [cardData, setCardData] = useState({
     card_number: '',
