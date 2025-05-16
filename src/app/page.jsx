@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+<meta name="google-site-verification" content="PppcBBop543j4AQtw5nUZuvc9nEJI2Frffiq-lAGWi0" />
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
